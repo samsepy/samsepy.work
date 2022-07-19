@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
@@ -8,6 +8,16 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   const [mode, setMode] = useState("light");
+
+  useEffect(() => {
+    if (localStorage.colorThema !== "") {
+      setMode(localStorage.colorThema);
+      return;
+    }
+    if (isDarkMode()) {
+      setMode("dark");
+    }
+  });
 
   function currentSwitch() {
     if (mode === "dark") {
@@ -23,6 +33,10 @@ export default function Home() {
     } else {
       return styles.light;
     }
+  }
+
+  function isDarkMode() {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
   }
 
   function currentAge() {
@@ -258,10 +272,12 @@ export default function Home() {
           }`}
           onClick={() =>
             setMode(() => {
-              if (mode === "dark") {
-                return "light";
-              } else {
+              if (localStorage.colorThema === "light") {
+                localStorage.colorThema = "dark";
                 return "dark";
+              } else {
+                localStorage.colorThema = "light";
+                return "light";
               }
             })
           }
