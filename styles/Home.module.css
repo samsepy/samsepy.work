@@ -1,116 +1,79 @@
 .container {
-  padding: 0 2rem;
-}
-
-.main {
+  margin: 0 auto;
+  padding: 30px 10px;
   min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+  max-width: 750px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-.footer {
+.list {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+}
+
+.dark {
+  background-color: #616161;
+  color: #fff;
+}
+
+.light {
+  background-color: #fff;
+  color: #616161;
+}
+
+.mode-switch-button {
+  bottom: 30px;
+  right: 30px;
+}
+
+.location-button {
+  bottom: 105px;
+  right: 30px;
+}
+
+.floating-button {
+  position: fixed;
   display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
   align-items: center;
-}
-
-.footer a {
-  display: flex;
   justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px black;
+  text-align: center;
+  vertical-align: bottom;
+  cursor: pointer;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.floating-button .icon {
+  width: 60%;
+  height: 60%;
+  font-size: 30px;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
+.bio {
   text-align: center;
 }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
+.icon {
+  display: block;
+  border-radius: 50%;
+  margin: 0 auto;
+  min-width: inherit !important;
+  max-width: inherit !important;
+  min-height: inherit !important;
+  max-height: inherit !important;
+  width: 200px !important;
+  height: 200px !important;
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+.title {
+  text-align: center;
 }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-}
-
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+.related-logo {
+  vertical-align: middle;
+  margin-right: 8px;
 }
