@@ -266,7 +266,10 @@ export default function Home() {
             })
           }
         >
-          <FontAwesomeIcon icon={faLightbulb} className={"icon"} />
+          <FontAwesomeIcon
+            icon={faLightbulb}
+            className={styles.floatingButtonIcon}
+          />
         </span>
       </div>
     </div>
