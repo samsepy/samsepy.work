@@ -23,7 +23,7 @@
   color: #616161;
 }
 
-.mode-switch-button {
+.modeSwitchButton {
   bottom: 30px;
   right: 30px;
 }
@@ -33,7 +33,7 @@
   right: 30px;
 }
 
-.floating-button {
+.floatingButton {
   position: fixed;
   display: flex;
   align-items: center;
@@ -47,7 +47,7 @@
   cursor: pointer;
 }
 
-.floating-button .icon {
+.floatingButton .icon {
   width: 60%;
   height: 60%;
   font-size: 30px;
