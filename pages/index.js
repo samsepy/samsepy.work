@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import utilStyles from "../styles/utils.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
@@ -72,34 +73,31 @@ export default function Home() {
         <h2>Profile</h2>
         <ul className={styles.list}>
           <li>
-            <span>
-              {" "}
-              <span className={styles.item}>Name</span>:{" "}
+            <span className={utilStyles.mr2}>
+              <span>Name</span>:
             </span>
             <wbr />
             <span>Hajime Todo (東度 基)</span>
           </li>
           <li>
-            <span>
-              {" "}
-              <span className={styles.item}>Screen Name</span>:{" "}
+            <span className={utilStyles.mr2}>
+              <span>Screen Name</span>:
             </span>
             <wbr />
             <span>todo, samsepy</span>
           </li>
           <li>
-            <span>
-              {" "}
-              <span className={styles.item}>Job</span>:{" "}
+            <span className={utilStyles.mr2}>
+              <span>Job</span>:
             </span>
             <wbr />
             <span>Software Engineer</span>
           </li>
           <li>
-            <span className={styles.item}>Career</span>:
+            <span>Career</span>:
             <ul className={styles.list}>
               <li>
-                <span className={styles.item}>2014-2018</span>
+                <span className={utilStyles.mr2}>2014-2018</span>
                 <wbr />
                 <span>
                   <a href="https://www.kanazawa-it.ac.jp/">
@@ -108,21 +106,21 @@ export default function Home() {
                 </span>
               </li>
               <li>
-                <span className={styles.item}>2016-2017</span>
+                <span className={utilStyles.mr2}>2016-2017</span>
                 <wbr />
                 <span>
                   <a href="https://www.souya.biz/">SOUYA Co.,Ltd.</a>
                 </span>
               </li>
               <li>
-                <span className={styles.item}>2018-2019</span>
+                <span className={utilStyles.mr2}>2018-2019</span>
                 <wbr />
                 <span>
                   <a href="https://open8.com/">OPEN8 Inc.</a>
                 </span>
               </li>
               <li>
-                <span className={styles.item}>Currently</span>
+                <span className={utilStyles.mr2}>Currently</span>
                 <wbr />
                 <span>
                   <a href="https://entershare.jp/">entershare Inc.</a>
@@ -134,9 +132,8 @@ export default function Home() {
         <h2>Skills</h2>
         <ul className={styles.list}>
           <li>
-            <span>
-              {" "}
-              <span className={styles.item}>Programming Languages</span>:{" "}
+            <span className={utilStyles.mr2}>
+              <span>Programming Languages</span>:
             </span>
             <wbr />
             <span>
@@ -145,9 +142,8 @@ export default function Home() {
             </span>
           </li>
           <li>
-            <span>
-              {" "}
-              <span className={styles.item}>Frameworks</span>:{" "}
+            <span className={utilStyles.mr2}>
+              <span>Frameworks</span>:
             </span>
             <wbr />
             <span>
@@ -155,9 +151,8 @@ export default function Home() {
             </span>
           </li>
           <li>
-            <span>
-              {" "}
-              <span className={styles.item}>Databases</span>:{" "}
+            <span className={utilStyles.mr2}>
+              <span>Databases</span>:
             </span>
             <wbr />
             <span>
@@ -165,9 +160,8 @@ export default function Home() {
             </span>
           </li>
           <li>
-            <span>
-              {" "}
-              <span className={styles.item}>Markup Languages</span>:{" "}
+            <span className={utilStyles.mr2}>
+              <span>Markup Languages</span>:
             </span>
             <wbr />
             <span>
@@ -178,9 +172,8 @@ export default function Home() {
             </span>
           </li>
           <li>
-            <span>
-              {" "}
-              <span className={styles.item}>Environments</span>:{" "}
+            <span className={utilStyles.mr2}>
+              <span>Environments</span>:
             </span>
             <wbr />
             <span>
@@ -216,33 +209,29 @@ export default function Home() {
         <p>請求や送金する際にこちらを使ってもらうと助かります。</p>
         <ul className={styles.list}>
           <li>
-            <span>
-              {" "}
-              <span className={styles.item}>Kyash</span>:{" "}
+            <span className={utilStyles.mr2}>
+              <span>Kyash</span>:
             </span>
             <wbr />
             <span>@samsepy</span>
           </li>
           <li>
-            <span>
-              {" "}
-              <span className={styles.item}>LINE Pay</span>:{" "}
+            <span className={utilStyles.mr2}>
+              <span>LINE Pay</span>:
             </span>
             <wbr />
             <span>@todo1995</span>
           </li>
           <li>
-            <span>
-              {" "}
-              <span className={styles.item}>PayPay</span>:{" "}
+            <span className={utilStyles.mr2}>
+              <span>PayPay</span>:
             </span>
             <wbr />
             <span>@samsepy</span>
           </li>
           <li>
-            <span>
-              {" "}
-              <span className={styles.item}>NEM</span>:{" "}
+            <span className={utilStyles.mr2}>
+              <span>NEM</span>:
             </span>
             <wbr />
             <span>NAVLPQ-TXNVHP-GSXUE7-NEH5N4-QMPH2X-Q5VZ65-OWFI</span>
