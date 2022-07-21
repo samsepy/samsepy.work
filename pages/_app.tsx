@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-function isDarkMode() {
+function isDarkMode(): boolean {
   return window.matchMedia("(prefers-color-scheme: dark)").matches;
 }
 

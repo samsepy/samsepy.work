@@ -20,7 +20,7 @@ export default function Home() {
     }
   });
 
-  function currentSwitch() {
+  function currentSwitch(): string {
     if (mode === "dark") {
       return styles.light;
     } else {
@@ -28,7 +28,7 @@ export default function Home() {
     }
   }
 
-  function currentMode() {
+  function currentMode(): string {
     if (mode === "dark") {
       return styles.dark;
     } else {
@@ -36,11 +36,7 @@ export default function Home() {
     }
   }
 
-  function isDarkMode() {
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  }
-
-  function currentAge() {
+  function currentAge(): number {
     const birthday = new Date(1995, 8 - 1, 30);
     const today = new Date();
     const thisYearBirthDay = new Date(
