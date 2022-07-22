@@ -57,7 +57,7 @@ export default function Home() {
       <div className={styles.container}>
         <Image
           priority
-          src="/images/icon.png"
+          src="/images/icon.jpeg"
           className={styles.icon}
           height={200}
           width={200}
