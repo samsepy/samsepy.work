@@ -21,7 +21,7 @@ export default function Layout({
 }: {
   children: React.ReactNode;
   title?: string;
-  descr?: string;
+  description?: string;
   url?: string;
   imgUrl?: string;
 }) {
