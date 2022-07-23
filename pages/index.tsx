@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import Layout from "../components/layout";
+import { currentAge } from "../lib/calcs";
 
 export default function Home() {
   const [mode, setMode] = useState("light");
@@ -39,18 +40,6 @@ export default function Home() {
 
   function isDarkMode() {
     return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  }
-
-  function currentAge(): number {
-    const birthday = new Date(1995, 8 - 1, 30);
-    const today = new Date();
-    const thisYearBirthDay = new Date(
-      today.getFullYear(),
-      birthday.getMonth(),
-      birthday.getDate(),
-    );
-    const age = today.getFullYear() - birthday.getFullYear();
-    return today < thisYearBirthDay ? age - 1 : age;
   }
 
   return (
