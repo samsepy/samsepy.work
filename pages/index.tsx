@@ -181,9 +181,6 @@ export default function Home() {
           <a href="https://www.facebook.com/hajime.todo/">Facebook</a>
         </li>
         <li>
-          <a href="https://line.me/ti/p/pGoAZ-zuEH/">LINE</a>
-        </li>
-        <li>
           <a href="https://scrapbox.io/samsepy/">Scrapbox</a>
         </li>
       </ul>
@@ -226,6 +223,9 @@ export default function Home() {
         </li>
         <li>
           <a href="mailto:htodo@protonmail.ch/">Mail</a>
+        </li>
+        <li>
+          <a href="https://line.me/ti/p/pGoAZ-zuEH/">LINE</a>
         </li>
         <li>
           <a href="https://t.me/samsepy/">Telegram</a>
