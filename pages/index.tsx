@@ -89,8 +89,9 @@ export default function Home() {
           </span>
           <wbr />
           <span>
-            <a href="https://www.ruby-lang.org/">Ruby</a>,
-            <a href="https://www.python.org/">Python</a>
+            <a href="https://www.ruby-lang.org/">Ruby</a>,{" "}
+            <a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a>,{" "}
+            <a href="https://www.ruby-lang.org/">Python</a>
           </span>
         </li>
         <li>
@@ -99,7 +100,11 @@ export default function Home() {
           </span>
           <wbr />
           <span>
-            <a href="https://rubyonrails.org/">Ruby on Rails</a>
+            <a href="https://rubyonrails.org/">Ruby on Rails</a>,{" "}
+            <a href="https://reactjs.org/">React</a>,{" "}
+            <a href="https://vuejs.org/">Vue.js</a>,{" "}
+            <a href="https://nextjs.org/">Next.js</a>,{" "}
+            <a href="https://nuxtjs.org/">Nuxt.js</a>
           </span>
         </li>
         <li>
@@ -108,7 +113,9 @@ export default function Home() {
           </span>
           <wbr />
           <span>
-            <a href="https://www.mysql.com/">MySQL</a>
+            <a href="https://www.mysql.com/">MySQL</a>,{" "}
+            <a href="https://www.postgresql.org/">PostgreSQL</a>,{" "}
+            <a href="https://www.mongodb.com/">MongoDB</a>
           </span>
         </li>
         <li>
@@ -117,10 +124,33 @@ export default function Home() {
           </span>
           <wbr />
           <span>
-            <a href="https://en.wikipedia.org/wiki/HTML5/">HTML5</a> +
+            <a href="https://html.spec.whatwg.org/multipage/">
+              HTML Living Standard
+            </a>
+            ,{" "}
             <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets#CSS_3">
               CSS3
             </a>
+            , <a href="https://sass-lang.com/">Sass</a>
+          </span>
+        </li>
+        <li>
+          <span className={utilStyles.mr2}>
+            <span>Cloud Services</span>:
+          </span>
+          <wbr />
+          <span>
+            <a href="https://aws.amazon.com/">AWS</a>
+          </span>
+        </li>
+        <li>
+          <span className={utilStyles.mr2}>
+            <span>Web Servers</span>:
+          </span>
+          <wbr />
+          <span>
+            <a href="https://www.nginx.com/">Nginx</a>,{" "}
+            <a href="https://httpd.apache.org/">Apache</a>
           </span>
         </li>
         <li>
@@ -129,8 +159,8 @@ export default function Home() {
           </span>
           <wbr />
           <span>
-            <a href="https://www.apple.com/macos/">macOS</a>,
-            <a href="https://git-scm.com/">Git</a>,
+            <a href="https://www.apple.com/macos/">macOS</a>,{" "}
+            <a href="https://git-scm.com/">Git</a>,{" "}
             <a href="https://github.com/">GitHub</a>
           </span>
         </li>
