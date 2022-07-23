@@ -61,12 +61,6 @@
   display: block;
   border-radius: 50%;
   margin: 0 auto;
-  min-width: inherit !important;
-  max-width: inherit !important;
-  min-height: inherit !important;
-  max-height: inherit !important;
-  width: 200px !important;
-  height: 200px !important;
 }
 
 .title {

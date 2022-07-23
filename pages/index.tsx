@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import styles from "../styles/Layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Layout from "../components/layout";
@@ -15,6 +15,7 @@ export default function Home() {
           height={200}
           width={200}
           alt="icon"
+          layout="raw"
         />
         <h1 className={styles.title}>samsepy</h1>
         <p className={styles.bio}>
