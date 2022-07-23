@@ -15,7 +15,6 @@ export default function Home() {
           height={200}
           width={200}
           alt="icon"
-          layout="raw"
         />
         <h1 className={styles.title}>samsepy</h1>
         <p className={styles.bio}>
