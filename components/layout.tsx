@@ -1,5 +1,11 @@
+import { useState, useEffect } from "react";
 import Head from "next/head";
+import styles from "../styles/Layout.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { currentAge } from "../lib/calcs";
+import Footer from "./footer";
 
 export default function Layout({
   children,
@@ -14,8 +20,40 @@ export default function Layout({
   url?: string;
   imgUrl?: string;
 }) {
+  const [mode, setMode] = useState("light");
+
+  useEffect(() => {
+    if (localStorage.colorThema !== "") {
+      setMode(localStorage.colorThema);
+      return;
+    }
+    if (isDarkMode()) {
+      setMode("dark");
+    }
+  });
+
+  function currentSwitch(): string {
+    if (mode === "dark") {
+      return styles.light;
+    } else {
+      return styles.dark;
+    }
+  }
+
+  function currentMode(): string {
+    if (mode === "dark") {
+      return styles.dark;
+    } else {
+      return styles.light;
+    }
+  }
+
+  function isDarkMode() {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }
+
   return (
-    <>
+    <div className={currentMode()}>
       <Head>
         <title>{title}</title>
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
@@ -29,6 +67,28 @@ export default function Layout({
         <link rel="canonical" href={url} />
       </Head>
       <main>{children}</main>
-    </>
+      <Footer />
+      <span
+        className={`${currentSwitch()} ${styles.floatingButton} ${
+          styles.modeSwitchButton
+        }`}
+        onClick={() =>
+          setMode(() => {
+            if (localStorage.colorThema === "light") {
+              localStorage.colorThema = "dark";
+              return "dark";
+            } else {
+              localStorage.colorThema = "light";
+              return "light";
+            }
+          })
+        }
+      >
+        <FontAwesomeIcon
+          icon={faLightbulb}
+          className={styles.floatingButtonIcon}
+        />
+      </span>
+    </div>
   );
 }
