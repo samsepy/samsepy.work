@@ -30,7 +30,7 @@ export default function Layout({
     if (isDarkMode()) {
       setMode("dark");
     }
-  });
+  }, []);
 
   function currentSwitch(): string {
     if (mode === "dark") {
