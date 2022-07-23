@@ -222,7 +222,7 @@ export default function Home() {
           <a href="tel:+819062734866">Tel</a>
         </li>
         <li>
-          <a href="mailto:htodo@protonmail.ch/">Mail</a>
+          <a href="mailto:samsepylot@gmail.com/">Mail</a>
         </li>
         <li>
           <a href="https://line.me/ti/p/pGoAZ-zuEH/">LINE</a>
