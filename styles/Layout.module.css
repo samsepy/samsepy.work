@@ -16,11 +16,15 @@
 .dark {
   background-color: #616161;
   color: #fff;
+  transition-property: background-color, color;
+  transition-duration: 1s;
 }
 
 .light {
   background-color: #fff;
   color: #616161;
+  transition-property: background-color, color;
+  transition-duration: 1s;
 }
 
 .modeSwitchButton {
