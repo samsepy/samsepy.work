@@ -3,16 +3,9 @@ import styles from "../styles/Layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Layout from "../components/layout";
 import { currentAge } from "../lib/calcs";
-import { event } from "nextjs-google-analytics";
+import { trackEventClick } from "../lib/ga";
 
 export default function Home() {
-  function trackEventClick(category: string) {
-    event("click", {
-      category: category,
-      label: "click",
-    });
-  }
-
   return (
     <Layout>
       <Image
