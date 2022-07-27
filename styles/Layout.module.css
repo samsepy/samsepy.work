@@ -21,6 +21,8 @@
 }
 
 .dark a {
+  transition-property: background-color, color;
+  transition-duration: 1s;
   color: #fff;
 }
 
@@ -30,7 +32,10 @@
   transition-property: background-color, color;
   transition-duration: 1s;
 }
+
 .light a {
+  transition-property: background-color, color;
+  transition-duration: 1s;
   color: #616161;
 }
 
