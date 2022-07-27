@@ -20,11 +20,18 @@
   transition-duration: 1s;
 }
 
+.dark a {
+  color: #fff;
+}
+
 .light {
   background-color: #fff;
   color: #616161;
   transition-property: background-color, color;
   transition-duration: 1s;
+}
+.light a {
+  color: #616161;
 }
 
 .modeSwitchButton {

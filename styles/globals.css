@@ -34,11 +34,6 @@ h3 {
   text-align: left;
 }
 
-h1,
-h2 {
-  color: #9ba747;
-}
-
 p {
   margin: 16px 0;
   text-align: left;
@@ -55,10 +50,6 @@ li {
 
 li span {
   display: inline-block;
-}
-
-a {
-  color: #f29d4b;
 }
 
 a:hover {
