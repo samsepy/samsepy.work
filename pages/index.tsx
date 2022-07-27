@@ -6,7 +6,7 @@ import { trackEventClick } from "../lib/ga";
 import styles from "../styles/Layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <Layout>
       <Image
@@ -171,7 +171,7 @@ export default function Home() {
       <h3>
         <a
           href="https://github.com/samsepy/banhst.git/"
-          onClick={() => trackEventClick("github")}
+          onClick={(): void => trackEventClick("github")}
         >
           banhst
         </a>
@@ -184,7 +184,7 @@ export default function Home() {
         <li>
           <a
             href="https://github.com/samsepy/"
-            onClick={() => trackEventClick("github")}
+            onClick={(): void => trackEventClick("github")}
           >
             GitHub
           </a>
@@ -192,7 +192,7 @@ export default function Home() {
         <li>
           <a
             href="https://www.facebook.com/hajime.todo/"
-            onClick={() => trackEventClick("facebook")}
+            onClick={(): void => trackEventClick("facebook")}
           >
             Facebook
           </a>
@@ -200,7 +200,7 @@ export default function Home() {
         <li>
           <a
             href="https://scrapbox.io/samsepy/"
-            onClick={() => trackEventClick("scrapbox")}
+            onClick={(): void => trackEventClick("scrapbox")}
           >
             Scrapbox
           </a>
@@ -241,14 +241,17 @@ export default function Home() {
       <h2>Contacts</h2>
       <ul className={styles.list}>
         <li>
-          <a href="tel:+819062734866" onClick={() => trackEventClick("tel")}>
+          <a
+            href="tel:+819062734866"
+            onClick={(): void => trackEventClick("tel")}
+          >
             Tel
           </a>
         </li>
         <li>
           <a
             href="mailto:samsepylot@gmail.com/"
-            onClick={() => trackEventClick("mail")}
+            onClick={(): void => trackEventClick("mail")}
           >
             Mail
           </a>
@@ -256,7 +259,7 @@ export default function Home() {
         <li>
           <a
             href="https://line.me/ti/p/pGoAZ-zuEH/"
-            onClick={() => trackEventClick("line")}
+            onClick={(): void => trackEventClick("line")}
           >
             LINE
           </a>
@@ -264,7 +267,7 @@ export default function Home() {
         <li>
           <a
             href="https://t.me/samsepy/"
-            onClick={() => trackEventClick("telegram")}
+            onClick={(): void => trackEventClick("telegram")}
           >
             Telegram
           </a>
@@ -272,7 +275,7 @@ export default function Home() {
         <li>
           <a
             href="https://www.facebook.com/hajime.todo/"
-            onClick={() => trackEventClick("messenger")}
+            onClick={(): void => trackEventClick("messenger")}
           >
             Messenger
           </a>

@@ -20,7 +20,7 @@ export default function Layout({
   description?: string;
   url?: string;
   imgUrl?: string;
-}) {
+}): JSX.Element {
   const [mode, setMode] = useState("light");
 
   useEffect(() => {
@@ -49,7 +49,7 @@ export default function Layout({
     }
   }
 
-  function isDarkMode() {
+  function isDarkMode(): boolean {
     return window.matchMedia("(prefers-color-scheme: dark)").matches;
   }
 
@@ -78,7 +78,7 @@ export default function Layout({
         className={`${currentSwitch()} ${styles.floatingButton} ${
           styles.modeSwitchButton
         }`}
-        onClick={() =>
+        onClick={(): void =>
           setMode(() => {
             if (localStorage.colorThema === "light") {
               localStorage.colorThema = "dark";
