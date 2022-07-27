@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
-import Head from "next/head";
-import styles from "../styles/Layout.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Head from "next/head";
+import { useState, useEffect } from "react";
+
 import { currentAge } from "../lib/calcs";
+import styles from "../styles/Layout.module.css";
+
 import Footer from "./footer";
 
 export default function Layout({

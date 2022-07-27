@@ -1,9 +1,10 @@
 import Image from "next/future/image";
-import styles from "../styles/Layout.module.css";
-import utilStyles from "../styles/utils.module.css";
+
 import Layout from "../components/layout";
 import { currentAge } from "../lib/calcs";
 import { trackEventClick } from "../lib/ga";
+import styles from "../styles/Layout.module.css";
+import utilStyles from "../styles/utils.module.css";
 
 export default function Home() {
   return (
