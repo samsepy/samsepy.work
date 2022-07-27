@@ -74,11 +74,16 @@ export default function Home(): JSX.Element {
               </span>
             </li>
             <li>
-              <span className={utilStyles.mr2}>Currently</span>
+              <span className={utilStyles.mr2}>2019-2022</span>
               <wbr />
               <span>
                 <a href="https://entershare.jp/">entershare Inc.</a>
               </span>
+            </li>
+            <li>
+              <span className={utilStyles.mr2}>Currently</span>
+              <wbr />
+              <span>Freelance Engineer</span>
             </li>
           </ul>
         </li>
