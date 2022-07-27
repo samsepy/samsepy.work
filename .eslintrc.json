@@ -4,6 +4,7 @@
   "rules": {
     "semi": ["error", "always"],
     "react/no-unescaped-entities": 0,
+    "no-shadow": "error",
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
       "warn",
