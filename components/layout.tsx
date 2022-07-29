@@ -24,10 +24,11 @@ export default function Layout({
   const [mode, setMode] = useState("light");
 
   function isDarkMode(): boolean {
-    return (
-      window.matchMedia("(prefers-color-scheme: dark)").matches ||
-      localStorage.colorThema === "dark"
-    );
+    if (localStorage.colorThema === "dark") {
+      return true;
+    }
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
   }
 
   function currentSwitch(): string {
