@@ -26,6 +26,8 @@ export default function Layout({
   function isDarkMode(): boolean {
     if (localStorage.colorThema === "light") {
       return false;
+    } else if (localStorage.colorThema === "dark") {
+      return true;
     }
 
     return window.matchMedia("(prefers-color-scheme: dark)").matches;
