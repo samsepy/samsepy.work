@@ -24,8 +24,8 @@ export default function Layout({
   const [mode, setMode] = useState("light");
 
   function isDarkMode(): boolean {
-    if (localStorage.colorThema === "dark") {
-      return true;
+    if (localStorage.colorThema === "light") {
+      return false;
     }
 
     return window.matchMedia("(prefers-color-scheme: dark)").matches;
