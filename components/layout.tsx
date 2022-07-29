@@ -94,6 +94,7 @@ export default function Layout({
         }
       >
         <FontAwesomeIcon
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           icon={faLightbulb}
           className={styles.floatingButtonIcon}
         />
