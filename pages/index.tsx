@@ -2,7 +2,6 @@ import Image from "next/future/image";
 
 import Layout from "../components/layout";
 import { currentAge } from "../lib/calcs";
-import { trackEventClick } from "../lib/ga";
 import styles from "../styles/Layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 
@@ -174,12 +173,7 @@ export default function Home(): JSX.Element {
       </ul>
       <h2>Works</h2>
       <h3>
-        <a
-          href="https://github.com/samsepy/banhst.git/"
-          onClick={(): void => trackEventClick("github")}
-        >
-          banhst
-        </a>
+        <a href="https://github.com/samsepy/banhst.git/">banhst</a>
       </h3>
       <p>
         任意のホストの通信を強制的に遮断するCLIツール。SNS等で消耗している現代の若者におすすめ。
@@ -187,28 +181,13 @@ export default function Home(): JSX.Element {
       <h2>Links</h2>
       <ul className={styles.list}>
         <li>
-          <a
-            href="https://github.com/samsepy/"
-            onClick={(): void => trackEventClick("github")}
-          >
-            GitHub
-          </a>
+          <a href="https://github.com/samsepy/">GitHub</a>
         </li>
         <li>
-          <a
-            href="https://www.facebook.com/hajime.todo/"
-            onClick={(): void => trackEventClick("facebook")}
-          >
-            Facebook
-          </a>
+          <a href="https://www.facebook.com/hajime.todo/">Facebook</a>
         </li>
         <li>
-          <a
-            href="https://scrapbox.io/samsepy/"
-            onClick={(): void => trackEventClick("scrapbox")}
-          >
-            Scrapbox
-          </a>
+          <a href="https://scrapbox.io/samsepy/">Scrapbox</a>
         </li>
       </ul>
       <h2>Pays</h2>
@@ -246,44 +225,19 @@ export default function Home(): JSX.Element {
       <h2>Contacts</h2>
       <ul className={styles.list}>
         <li>
-          <a
-            href="tel:+819062734866"
-            onClick={(): void => trackEventClick("tel")}
-          >
-            Tel
-          </a>
+          <a href="tel:+819062734866">Tel</a>
         </li>
         <li>
-          <a
-            href="mailto:samsepylot@gmail.com/"
-            onClick={(): void => trackEventClick("mail")}
-          >
-            Mail
-          </a>
+          <a href="mailto:samsepylot@gmail.com/">Mail</a>
         </li>
         <li>
-          <a
-            href="https://line.me/ti/p/pGoAZ-zuEH/"
-            onClick={(): void => trackEventClick("line")}
-          >
-            LINE
-          </a>
+          <a href="https://line.me/ti/p/pGoAZ-zuEH/">LINE</a>
         </li>
         <li>
-          <a
-            href="https://t.me/samsepy/"
-            onClick={(): void => trackEventClick("telegram")}
-          >
-            Telegram
-          </a>
+          <a href="https://t.me/samsepy/">Telegram</a>
         </li>
         <li>
-          <a
-            href="https://www.facebook.com/hajime.todo/"
-            onClick={(): void => trackEventClick("messenger")}
-          >
-            Messenger
-          </a>
+          <a href="https://www.facebook.com/hajime.todo/">Messenger</a>
         </li>
       </ul>
     </Layout>
