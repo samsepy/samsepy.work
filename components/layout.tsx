@@ -82,14 +82,14 @@ export default function Layout({
         }`}
         onClick={(): void =>
           setMode(() => {
-            if (localStorage.colorThema === "light") {
-              localStorage.colorThema = "dark";
-
-              return "dark";
-            } else {
+            if (isDarkMode()) {
               localStorage.colorThema = "light";
 
               return "light";
+            } else {
+              localStorage.colorThema = "dark";
+
+              return "dark";
             }
           })
         }
