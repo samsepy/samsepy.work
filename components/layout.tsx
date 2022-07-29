@@ -23,15 +23,12 @@ export default function Layout({
 }): JSX.Element {
   const [mode, setMode] = useState("light");
 
-  useEffect(() => {
-    if (localStorage.colorThema !== "") {
-      setMode(localStorage.colorThema);
-      return;
-    }
-    if (isDarkMode()) {
-      setMode("dark");
-    }
-  }, []);
+  function isDarkMode(): boolean {
+    return (
+      window.matchMedia("(prefers-color-scheme: dark)").matches ||
+      localStorage.colorThema === "dark"
+    );
+  }
 
   function currentSwitch(): string {
     if (mode === "dark") {
@@ -49,9 +46,13 @@ export default function Layout({
     }
   }
 
-  function isDarkMode(): boolean {
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  }
+  useEffect(() => {
+    if (isDarkMode()) {
+      setMode("dark");
+    } else {
+      setMode("light");
+    }
+  }, []);
 
   return (
     <div className={currentMode()}>
@@ -82,9 +83,11 @@ export default function Layout({
           setMode(() => {
             if (localStorage.colorThema === "light") {
               localStorage.colorThema = "dark";
+
               return "dark";
             } else {
               localStorage.colorThema = "light";
+
               return "light";
             }
           })

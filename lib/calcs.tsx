@@ -7,5 +7,6 @@ export function currentAge(): number {
     birthday.getDate(),
   );
   const age = today.getFullYear() - birthday.getFullYear();
+
   return today < thisYearBirthDay ? age - 1 : age;
 }
