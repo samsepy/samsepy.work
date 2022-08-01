@@ -1,7 +1,6 @@
-import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
 import { useState, useEffect } from "react";
+import { FaRegLightbulb } from "react-icons/fa";
 
 import Footer from "@/components/footer";
 import { currentAge } from "@/lib/calcs";
@@ -95,11 +94,7 @@ export default function Layout({
           })
         }
       >
-        <FontAwesomeIcon
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          icon={faLightbulb}
-          className={styles.floatingButtonIcon}
-        />
+        <FaRegLightbulb className={styles.floatingButtonIcon} />
       </span>
     </div>
   );
