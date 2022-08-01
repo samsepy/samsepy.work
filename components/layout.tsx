@@ -59,7 +59,7 @@ export default function Layout({
 
   return (
     <div className={currentMode()}>
-      <div className={styles.container}>
+      <div className="container max-w-3xl py-8">
         <Head>
           <title>{title}</title>
           <meta

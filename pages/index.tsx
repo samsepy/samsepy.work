@@ -2,8 +2,6 @@ import Image from "next/future/image";
 
 import Layout from "../components/layout";
 import { currentAge } from "../lib/calcs";
-import styles from "../styles/Layout.module.css";
-import utilStyles from "../styles/utils.module.css";
 
 export default function Home(): JSX.Element {
   return (
@@ -11,36 +9,36 @@ export default function Home(): JSX.Element {
       <Image
         priority
         src="/images/icon.jpeg"
-        className={styles.icon}
+        className="mx-auto rounded-full mb-6"
         height={200}
         width={200}
         alt="icon"
       />
-      <h1 className={styles.title}>samsepy</h1>
-      <p className={styles.bio}>
+      <h1 className="text-center">samsepy</h1>
+      <p className="text-center mb-6">
         1995年8月30日生まれ、{currentAge()}歳。
         <br />
         リモートでエンジニアをやっている。 <br />
         海外で暮らしたい。
       </p>
       <h2>Profile</h2>
-      <ul className={styles.list}>
+      <ul className="mb-5">
         <li>
-          <span className={utilStyles.mr2}>
+          <span className="mr-2">
             <span>Name</span>:
           </span>
           <wbr />
           <span>Hajime Todo (東度 基)</span>
         </li>
         <li>
-          <span className={utilStyles.mr2}>
+          <span className="mr-2">
             <span>Screen Name</span>:
           </span>
           <wbr />
           <span>todo, samsepy</span>
         </li>
         <li>
-          <span className={utilStyles.mr2}>
+          <span className="mr-2">
             <span>Job</span>:
           </span>
           <wbr />
@@ -48,9 +46,9 @@ export default function Home(): JSX.Element {
         </li>
         <li>
           <span>Career</span>:
-          <ul className={styles.list}>
+          <ul className="mb-5">
             <li>
-              <span className={utilStyles.mr2}>2014-2018</span>
+              <span className="mr-2">2014-2018</span>
               <wbr />
               <span>
                 <a href="https://www.kanazawa-it.ac.jp/">
@@ -59,28 +57,28 @@ export default function Home(): JSX.Element {
               </span>
             </li>
             <li>
-              <span className={utilStyles.mr2}>2016-2017</span>
+              <span className="mr-2">2016-2017</span>
               <wbr />
               <span>
                 <a href="https://www.souya.biz/">SOUYA Co.,Ltd.</a>
               </span>
             </li>
             <li>
-              <span className={utilStyles.mr2}>2018-2019</span>
+              <span className="mr-2">2018-2019</span>
               <wbr />
               <span>
                 <a href="https://open8.com/">OPEN8 Inc.</a>
               </span>
             </li>
             <li>
-              <span className={utilStyles.mr2}>2019-2022</span>
+              <span className="mr-2">2019-2022</span>
               <wbr />
               <span>
                 <a href="https://entershare.jp/">entershare Inc.</a>
               </span>
             </li>
             <li>
-              <span className={utilStyles.mr2}>Currently</span>
+              <span className="mr-2">Currently</span>
               <wbr />
               <span>Freelance Engineer</span>
             </li>
@@ -88,9 +86,9 @@ export default function Home(): JSX.Element {
         </li>
       </ul>
       <h2>Skills</h2>
-      <ul className={styles.list}>
+      <ul className="mb-5">
         <li>
-          <span className={utilStyles.mr2}>
+          <span className="mr-2">
             <span>Programming Languages</span>:
           </span>
           <wbr />
@@ -101,7 +99,7 @@ export default function Home(): JSX.Element {
           </span>
         </li>
         <li>
-          <span className={utilStyles.mr2}>
+          <span className="mr-2">
             <span>Frameworks</span>:
           </span>
           <wbr />
@@ -114,7 +112,7 @@ export default function Home(): JSX.Element {
           </span>
         </li>
         <li>
-          <span className={utilStyles.mr2}>
+          <span className="mr-2">
             <span>Databases</span>:
           </span>
           <wbr />
@@ -125,7 +123,7 @@ export default function Home(): JSX.Element {
           </span>
         </li>
         <li>
-          <span className={utilStyles.mr2}>
+          <span className="mr-2">
             <span>Markup Languages</span>:
           </span>
           <wbr />
@@ -141,7 +139,7 @@ export default function Home(): JSX.Element {
           </span>
         </li>
         <li>
-          <span className={utilStyles.mr2}>
+          <span className="mr-2">
             <span>Cloud Services</span>:
           </span>
           <wbr />
@@ -150,7 +148,7 @@ export default function Home(): JSX.Element {
           </span>
         </li>
         <li>
-          <span className={utilStyles.mr2}>
+          <span className="mr-2">
             <span>Web Servers</span>:
           </span>
           <wbr />
@@ -160,7 +158,7 @@ export default function Home(): JSX.Element {
           </span>
         </li>
         <li>
-          <span className={utilStyles.mr2}>
+          <span className="mr-2">
             <span>Environments</span>:
           </span>
           <wbr />
@@ -175,11 +173,11 @@ export default function Home(): JSX.Element {
       <h3>
         <a href="https://github.com/samsepy/banhst.git/">banhst</a>
       </h3>
-      <p>
+      <p className="mb-5">
         任意のホストの通信を強制的に遮断するCLIツール。SNS等で消耗している現代の若者におすすめ。
       </p>
       <h2>Links</h2>
-      <ul className={styles.list}>
+      <ul className="mb-5">
         <li>
           <a href="https://github.com/samsepy/">GitHub</a>
         </li>
@@ -192,30 +190,30 @@ export default function Home(): JSX.Element {
       </ul>
       <h2>Pays</h2>
       <p>請求や送金する際にこちらを使ってもらうと助かります。</p>
-      <ul className={styles.list}>
+      <ul className="mb-5">
         <li>
-          <span className={utilStyles.mr2}>
+          <span className="mr-2">
             <span>Kyash</span>:
           </span>
           <wbr />
           <span>@samsepy</span>
         </li>
         <li>
-          <span className={utilStyles.mr2}>
+          <span className="mr-2">
             <span>LINE Pay</span>:
           </span>
           <wbr />
           <span>@todo1995</span>
         </li>
         <li>
-          <span className={utilStyles.mr2}>
+          <span className="mr-2">
             <span>PayPay</span>:
           </span>
           <wbr />
           <span>@samsepy</span>
         </li>
         <li>
-          <span className={utilStyles.mr2}>
+          <span className="mr-2">
             <span>NEM</span>:
           </span>
           <wbr />
@@ -223,7 +221,7 @@ export default function Home(): JSX.Element {
         </li>
       </ul>
       <h2>Contacts</h2>
-      <ul className={styles.list}>
+      <ul className="mb-5">
         <li>
           <a href="tel:+819062734866">Tel</a>
         </li>
