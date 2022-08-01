@@ -43,6 +43,10 @@
     @apply text-2xl mb-4;
   }
 
+  a {
+    @apply underline decoration-4 decoration-indigo-500
+  }
+
   a:hover {
     opacity: 0.75;
   }
