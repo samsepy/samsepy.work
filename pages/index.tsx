@@ -1,7 +1,7 @@
 import Image from "next/future/image";
 
-import Layout from "../components/layout";
-import { currentAge } from "../lib/calcs";
+import Layout from "@/components/layout";
+import { currentAge } from "@/lib/calcs";
 
 export default function Home(): JSX.Element {
   return (

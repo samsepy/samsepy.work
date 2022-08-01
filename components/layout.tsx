@@ -3,10 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
 import { useState, useEffect } from "react";
 
-import { currentAge } from "../lib/calcs";
-import styles from "../styles/Layout.module.css";
-
-import Footer from "./footer";
+import Footer from "@/components/footer";
+import { currentAge } from "@/lib/calcs";
+import styles from "@/styles/Layout.module.css";
 
 export default function Layout({
   children,
