@@ -75,7 +75,7 @@ export default function Layout({
           <meta property="og:image" content={imgUrl} />
           <link rel="canonical" href={url} />
         </Head>
-        <main>{children}</main>
+        <main className="mb-8">{children}</main>
         <Footer />
       </div>
       <span
