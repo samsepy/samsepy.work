@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,11 +7,20 @@
 @layer base {
   html {
     @apply text-sm;
-    font-family: "MS PGothic", "ＭＳ Ｐゴシック", sans-serif;
+    font-family: 'DotGothic16', "MS Gothic", "ＭＳ ゴシック", "Courier New", "Courier", monospace;
+    font-weight: 400;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+    text-rendering: optimizeSpeed;
+    font-smooth: never;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
     background-color: #000080;
     background-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
     color: #ffffff;
     line-height: 1.6;
+    letter-spacing: 0.02em;
   }
 
   body {
