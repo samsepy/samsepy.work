@@ -4,54 +4,104 @@
 
 @layer base {
   html {
-    @apply text-lg;
-    font-family: sans-serif;
-    font-weight: 700;
-    background-color: #fff;
-    color: #616161;
-    word-spacing: 1px;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    box-sizing: border-box;
+    @apply text-sm;
+    font-family: "MS PGothic", "ＭＳ Ｐゴシック", sans-serif;
+    background-color: #000080;
+    background-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+    color: #ffffff;
+    line-height: 1.6;
   }
 
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
+  body {
     margin: 0;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      background-color: #616161;
-      color: #fff;
-    }
+    padding: 0;
   }
 
   h1 {
-    @apply text-4xl mb-6;
+    font-size: 24px;
+    color: #ffff00;
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 2px 2px 0px #ff0000;
+    letter-spacing: 3px;
   }
 
   h2 {
-    @apply text-3xl mb-5;
+    font-size: 18px;
+    color: #00ffff;
+    border-left: 8px solid #ff00ff;
+    border-bottom: 2px dotted #ff00ff;
+    padding: 5px 0 5px 10px;
+    margin: 20px 0 10px 0;
+    background: linear-gradient(90deg, rgba(255,0,255,0.3), transparent);
   }
 
   h3 {
-    @apply text-2xl mb-4;
+    font-size: 16px;
+    color: #ffff00;
+    margin: 15px 0 10px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  h3:before {
+    content: "▼";
+    position: absolute;
+    left: 0;
+    color: #00ff00;
   }
 
   a {
-    @apply underline decoration-4 decoration-indigo-500
+    color: #00ffff;
+    text-decoration: underline;
   }
 
   a:hover {
-    opacity: 0.75;
+    color: #ffff00;
+    background-color: #ff00ff;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: #ff00ff;
+  }
+
+  ul {
+    margin: 10px 0;
+    padding-left: 30px;
+  }
+
+  li {
+    margin: 5px 0;
+    list-style-type: none;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  li:before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: #ffff00;
+  }
+
+  p {
+    margin: 10px 0;
+    line-height: 1.8;
   }
 
   footer {
-    @apply text-center;
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    border-top: 3px double #ff00ff;
+    background: linear-gradient(180deg, transparent, rgba(255,0,255,0.2));
+  }
+
+  hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff00ff, #00ffff, #ffff00, transparent);
+    margin: 30px 0;
   }
 }

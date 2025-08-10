@@ -1,14 +1,11 @@
 import Head from "next/head";
-import { useState, useEffect } from "react";
-import { FaRegLightbulb } from "react-icons/fa";
-
 import Footer from "@/components/footer";
 import { currentAge } from "@/lib/calcs";
 import styles from "@/styles/Layout.module.css";
 
 export default function Layout({
   children,
-  title = "samsepy",
+  title = "☆★☆ SAMSEPY'S HOMEPAGE ☆★☆",
   description = `1995年8月30日生まれ、${currentAge()}歳。リモートでエンジニアをやっている。海外で暮らしたい。`,
   url = "samsepy.work",
   imgUrl = "https://samsepy.work/icon.jpeg",
@@ -19,45 +16,9 @@ export default function Layout({
   url?: string;
   imgUrl?: string;
 }): JSX.Element {
-  const [mode, setMode] = useState("light");
-
-  function isDarkMode(): boolean {
-    if (localStorage.colorThema === "light") {
-      return false;
-    } else if (localStorage.colorThema === "dark") {
-      return true;
-    }
-
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  }
-
-  function currentSwitch(): string {
-    if (mode === "dark") {
-      return styles.light;
-    } else {
-      return styles.dark;
-    }
-  }
-
-  function currentMode(): string {
-    if (mode === "dark") {
-      return styles.dark;
-    } else {
-      return styles.light;
-    }
-  }
-
-  useEffect(() => {
-    if (isDarkMode()) {
-      setMode("dark");
-    } else {
-      setMode("light");
-    }
-  }, []);
-
   return (
-    <div className={currentMode()}>
-      <div className="container max-w-3xl py-8">
+    <div style={{minHeight: '100vh'}}>
+      <div className={styles.container}>
         <Head>
           <title>{title}</title>
           <meta
@@ -76,26 +37,6 @@ export default function Layout({
         <main className="mb-8">{children}</main>
         <Footer />
       </div>
-      <span
-        className={`${currentSwitch()} ${styles.floatingButton} ${
-          styles.modeSwitchButton
-        }`}
-        onClick={(): void =>
-          setMode(() => {
-            if (isDarkMode()) {
-              localStorage.colorThema = "light";
-
-              return "light";
-            } else {
-              localStorage.colorThema = "dark";
-
-              return "dark";
-            }
-          })
-        }
-      >
-        <FaRegLightbulb className={styles.floatingButtonIcon} />
-      </span>
     </div>
   );
 }
