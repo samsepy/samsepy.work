@@ -1,4 +1,5 @@
 import Head from "next/head";
+
 import Footer from "@/components/footer";
 import { currentAge } from "@/lib/calcs";
 import styles from "@/styles/Layout.module.css";

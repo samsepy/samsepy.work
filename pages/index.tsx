@@ -1,17 +1,19 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import Layout from "@/components/layout";
+
 import BlueScreen from "@/components/BlueScreen";
+import Layout from "@/components/layout";
 import { currentAge } from "@/lib/calcs";
 import styles from "@/styles/Layout.module.css";
 
 export default function Home(): JSX.Element {
   const [visitorCount, setVisitorCount] = useState(12345);
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       setVisitorCount(prev => prev + Math.floor(Math.random() * 3));
     }, 5000);
+
     return () => clearInterval(interval);
   }, []);
 

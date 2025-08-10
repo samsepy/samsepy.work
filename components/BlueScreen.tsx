@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function BlueScreen() {
+export default function BlueScreen(): JSX.Element | null {
   const [show, setShow] = useState(true);
   const [visibleLines, setVisibleLines] = useState(0);
 
@@ -45,10 +45,10 @@ export default function BlueScreen() {
     }, 3000);
     timers.push(hideTimer);
     
-    return () => {
+    return (): void => {
       timers.forEach(timer => clearTimeout(timer));
     };
-  }, []);
+  }, [lines]);
 
   if (!show) return null;
 
