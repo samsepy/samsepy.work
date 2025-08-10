@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 
 export default function BlueScreen(): JSX.Element | null {
   const [show, setShow] = useState(true);
   const [visibleLines, setVisibleLines] = useState(0);
 
-  const lines = [
+  const lines = useMemo(() => [
     { type: 'header', content: 'Windows', delay: 100 },
     { type: 'text', content: 'A problem has been detected and Windows has been shut down to prevent damage', delay: 200 },
     { type: 'text', content: 'to your computer.', delay: 250 },
@@ -28,7 +28,7 @@ export default function BlueScreen(): JSX.Element | null {
     { type: 'blink', content: 'Beginning dump of physical memory', delay: 1200 },
     { type: 'blink', content: 'Physical memory dump complete.', delay: 1400 },
     { type: 'blink', content: 'Contact your system administrator or technical support group for further assistance.', delay: 1600 },
-  ];
+  ], []);
 
   useEffect(() => {
     const timers: NodeJS.Timeout[] = [];
