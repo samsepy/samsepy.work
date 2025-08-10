@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Layout from "@/components/layout";
+import BlueScreen from "@/components/BlueScreen";
 import { currentAge } from "@/lib/calcs";
 import styles from "@/styles/Layout.module.css";
 
@@ -15,7 +16,9 @@ export default function Home(): JSX.Element {
   }, []);
 
   return (
-    <Layout>
+    <>
+      <BlueScreen />
+      <Layout>
       <div className="text-center mb-4">
         <div className={styles.marquee}>
           <span style={{color: '#ffff00'}}>☆★☆ ようこそ！ Welcome to SAMSEPY's HomePage ☆★☆</span>
@@ -281,5 +284,6 @@ export default function Home(): JSX.Element {
         <p style={{fontSize: '11px', color: '#00ffff'}}>Since 2019.08.30</p>
       </div>
     </Layout>
+    </>
   );
 }
