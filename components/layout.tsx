@@ -9,7 +9,7 @@ export default function Layout({
   title = "☆★☆ SAMSEPY'S HOMEPAGE ☆★☆",
   description = `1995年8月30日生まれ、${currentAge()}歳。リモートでエンジニアをやっている。海外で暮らしたい。`,
   url = "samsepy.work",
-  imgUrl = "https://samsepy.work/icon.jpeg",
+  imgUrl = "https://samsepy.work/images/samsepy.png",
 }: {
   children: React.ReactNode;
   title?: string;

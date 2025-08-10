@@ -33,11 +33,11 @@ export default function Home(): JSX.Element {
       <div className="text-center mb-6">
         <Image
           priority
-          src="/images/icon.jpeg"
+          src="/images/samsepy.png"
           className="mb-6"
           height={200}
           width={200}
-          alt="icon"
+          alt="samsepy logo"
           style={{border: '5px ridge #ff00ff', boxShadow: '5px 5px 0px #000'}}
         />
       </div>
