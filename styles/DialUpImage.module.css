@@ -1,0 +1,72 @@
+.container {
+  display: inline-block;
+  background: #000;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
+.canvas {
+  image-rendering: auto;
+  image-rendering: smooth;
+}
+
+.canvas.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  filter: contrast(1.2);
+}
+
+.loadingBar {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: #c0c0c0;
+  border: 2px inset #fff;
+  padding: 4px;
+  font-family: "MS UI Gothic", monospace;
+  font-size: 11px;
+}
+
+.loadingText {
+  color: #000;
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+.progressBar {
+  height: 12px;
+  background: #fff;
+  border: 1px inset #808080;
+  position: relative;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, 
+    #000080 0%, 
+    #0000ff 50%, 
+    #000080 100%);
+  transition: width 0.1s linear;
+  animation: shimmer 1s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}

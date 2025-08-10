@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { useState, useEffect } from "react";
 
 import BlueScreen from "@/components/BlueScreen";
+import DialUpImage from "@/components/DialUpImage";
 import Layout from "@/components/layout";
 import { currentAge } from "@/lib/calcs";
 import styles from "@/styles/Layout.module.css";
@@ -34,11 +34,11 @@ export default function Home(): JSX.Element {
             あなたは {visitorCount} 人目の訪問者です!
           </span>
         </div>
-        <div className="text-center mb-6">
-          <Image
+        <div className="text-center mb-6" style={{ minHeight: "250px" }}>
+          <DialUpImage
             priority
             src="/images/samsepy.png"
-            className="mb-6"
+            className="mb-6 inline-block"
             height={200}
             width={200}
             alt="samsepy logo"
@@ -46,6 +46,9 @@ export default function Home(): JSX.Element {
               border: "5px ridge #ff00ff",
               boxShadow: "5px 5px 0px #000",
             }}
+            loadingSpeed={100}
+            interlace={true}
+            pixelated={false}
           />
         </div>
         <h1 className={`text-center ${styles.rainbow}`}>
