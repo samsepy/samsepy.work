@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+
 import styles from "@/styles/DialUpImage.module.css";
 
 interface DialUpImageProps {
@@ -35,7 +36,7 @@ export default function DialUpImage({
     const img = document.createElement('img');
     img.src = src;
     
-    const startLoading = () => {
+    const startLoading = (): void => {
       const canvas = canvasRef.current;
       if (!canvas) return;
 
@@ -55,6 +56,7 @@ export default function DialUpImage({
           setTimeout(() => {
             setShowPixelated(false);
           }, 300);
+
           return;
         }
 
@@ -103,14 +105,13 @@ export default function DialUpImage({
         setLoadingProgress(currentProgress);
       }, loadingSpeed);
 
-      return () => clearInterval(interval);
     };
     
     if (img.complete) {
       startLoading();
     } else {
       img.onload = startLoading;
-      img.onerror = () => {
+      img.onerror = (): void => {
         console.error("Failed to load image:", src);
         setLoadingProgress(100);
       };
