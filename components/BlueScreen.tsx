@@ -1,8 +1,11 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo, useRef } from 'react';
 
 export default function BlueScreen(): JSX.Element | null {
   const [show, setShow] = useState(true);
   const [visibleLines, setVisibleLines] = useState(0);
+  const [isMuted, setIsMuted] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const lines = useMemo(() => [
     { type: 'header', content: 'Windows', delay: 100 },
@@ -30,7 +33,32 @@ export default function BlueScreen(): JSX.Element | null {
     { type: 'blink', content: 'Contact your system administrator or technical support group for further assistance.', delay: 1600 },
   ], []);
 
+  const handleInteraction = (): void => {
+    if (!hasInteracted && audioRef.current) {
+      setHasInteracted(true);
+      audioRef.current.play().catch(error => {
+        console.log('Audio play failed:', error);
+      });
+    }
+  };
+
   useEffect(() => {
+    const audio = new Audio('/sounds/dialup.m4a');
+    audioRef.current = audio;
+    audio.loop = false;
+    audio.volume = 1.0;
+    
+    const playAudio = async (): Promise<void> => {
+      try {
+        await audio.play();
+        setHasInteracted(true);
+      } catch (error) {
+        console.log('Audio autoplay was blocked. Click anywhere to play sound:', error);
+      }
+    };
+    
+    void playAudio();
+    
     const timers: NodeJS.Timeout[] = [];
     
     lines.forEach((line, index) => {
@@ -40,20 +68,35 @@ export default function BlueScreen(): JSX.Element | null {
       timers.push(timer);
     });
 
+    // 3秒後にブルースクリーンを非表示（音声は継続再生）
     const hideTimer = setTimeout(() => {
       setShow(false);
+      // 音声はそのまま最後まで再生される
     }, 3000);
     timers.push(hideTimer);
     
     return (): void => {
+      // コンポーネントがアンマウントされる時だけ音声を停止
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
       timers.forEach(timer => clearTimeout(timer));
     };
   }, [lines]);
 
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.muted = isMuted;
+    }
+  }, [isMuted]);
+
   if (!show) return null;
 
   return (
-    <div style={{
+    <div 
+      onClick={handleInteraction}
+      style={{
       position: 'fixed',
       top: 0,
       left: 0,
@@ -65,13 +108,27 @@ export default function BlueScreen(): JSX.Element | null {
       fontSize: '14px',
       padding: '20px',
       zIndex: 9999,
-      cursor: 'none',
+      cursor: 'pointer',
       userSelect: 'none',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center'
     }}>
+      {!hasInteracted && (
+        <div style={{
+          position: 'absolute',
+          top: '20px',
+          backgroundColor: '#FFFF00',
+          color: '#0000AA',
+          padding: '10px 20px',
+          fontWeight: 'bold',
+          animation: 'pulse 1s infinite'
+        }}>
+          CLICK ANYWHERE TO HEAR DIAL-UP SOUND
+        </div>
+      )}
+      
       <div style={{
         maxWidth: '800px',
         textAlign: 'center',
@@ -128,7 +185,33 @@ export default function BlueScreen(): JSX.Element | null {
           0%, 49% { opacity: 1; }
           50%, 100% { opacity: 0; }
         }
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+        }
       `}</style>
+      
+      <button
+        onClick={(): void => setIsMuted(!isMuted)}
+        style={{
+          position: 'absolute',
+          bottom: '20px',
+          right: '20px',
+          backgroundColor: 'transparent',
+          border: '2px solid #FFFFFF',
+          color: '#FFFFFF',
+          padding: '8px 16px',
+          fontFamily: 'Lucida Console, Courier New, monospace',
+          fontSize: '12px',
+          cursor: 'pointer',
+          opacity: 0.7,
+          transition: 'opacity 0.2s'
+        }}
+        onMouseOver={(e): void => { e.currentTarget.style.opacity = '1'; }}
+        onMouseOut={(e): void => { e.currentTarget.style.opacity = '0.7'; }}
+      >
+        {isMuted ? '🔇 UNMUTE' : '🔊 MUTE'}
+      </button>
     </div>
   );
 }
