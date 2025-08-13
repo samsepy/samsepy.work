@@ -91,12 +91,12 @@ export default function BlueScreen(): JSX.Element | null {
     }
   }, [isMuted]);
 
-  if (!show) return null;
-
   return (
-    <div 
-      onClick={handleInteraction}
-      style={{
+    <>
+      {show && (
+        <div 
+          onClick={handleInteraction}
+          style={{
       position: 'fixed',
       top: 0,
       left: 0,
@@ -191,27 +191,34 @@ export default function BlueScreen(): JSX.Element | null {
         }
       `}</style>
       
-      <button
-        onClick={(): void => setIsMuted(!isMuted)}
-        style={{
-          position: 'absolute',
-          bottom: '20px',
-          right: '20px',
-          backgroundColor: 'transparent',
-          border: '2px solid #FFFFFF',
-          color: '#FFFFFF',
-          padding: '8px 16px',
-          fontFamily: 'Lucida Console, Courier New, monospace',
-          fontSize: '12px',
-          cursor: 'pointer',
-          opacity: 0.7,
-          transition: 'opacity 0.2s'
-        }}
-        onMouseOver={(e): void => { e.currentTarget.style.opacity = '1'; }}
-        onMouseOut={(e): void => { e.currentTarget.style.opacity = '0.7'; }}
-      >
-        {isMuted ? '🔇 UNMUTE' : '🔊 MUTE'}
-      </button>
-    </div>
+        </div>
+      )}
+      
+      {/* ミュートボタンは常に表示 */}
+      {audioRef.current && (
+        <button
+          onClick={(): void => setIsMuted(!isMuted)}
+          style={{
+            position: 'fixed',
+            bottom: '20px',
+            right: '20px',
+            backgroundColor: 'rgba(0, 0, 170, 0.8)',
+            border: '2px solid #FFFFFF',
+            color: '#FFFFFF',
+            padding: '8px 16px',
+            fontFamily: 'Lucida Console, Courier New, monospace',
+            fontSize: '12px',
+            cursor: 'pointer',
+            opacity: 0.7,
+            transition: 'opacity 0.2s',
+            zIndex: 10000
+          }}
+          onMouseOver={(e): void => { e.currentTarget.style.opacity = '1'; }}
+          onMouseOut={(e): void => { e.currentTarget.style.opacity = '0.7'; }}
+        >
+          {isMuted ? '🔇 UNMUTE' : '🔊 MUTE'}
+        </button>
+      )}
+    </>
   );
 }
