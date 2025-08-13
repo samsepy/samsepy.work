@@ -123,9 +123,9 @@ export default function BlueScreen(): JSX.Element | null {
           color: '#0000AA',
           padding: '10px 20px',
           fontWeight: 'bold',
-          animation: 'pulse 1s infinite'
+          animation: 'polygonShock 1s infinite'
         }}>
-          CLICK ANYWHERE TO HEAR DIAL-UP SOUND
+          CLICK TO PLAY SOUND♪
         </div>
       )}
       
@@ -188,6 +188,19 @@ export default function BlueScreen(): JSX.Element | null {
         @keyframes pulse {
           0%, 100% { transform: scale(1); }
           50% { transform: scale(1.05); }
+        }
+        @keyframes polygonShock {
+          0% { background-color: #FF0000; color: #FFFFFF; }
+          10% { background-color: #00FF00; color: #000000; }
+          20% { background-color: #0000FF; color: #FFFFFF; }
+          30% { background-color: #FFFF00; color: #FF0000; }
+          40% { background-color: #FF00FF; color: #00FF00; }
+          50% { background-color: #00FFFF; color: #FF0000; }
+          60% { background-color: #FFFFFF; color: #000000; }
+          70% { background-color: #FF8000; color: #0080FF; }
+          80% { background-color: #8000FF; color: #80FF00; }
+          90% { background-color: #FF0080; color: #00FF80; }
+          100% { background-color: #FFFF00; color: #0000AA; }
         }
       `}</style>
       
