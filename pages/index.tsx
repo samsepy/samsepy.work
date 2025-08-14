@@ -42,10 +42,6 @@ export default function Home(): JSX.Element {
             height={200}
             width={200}
             alt="samsepy logo"
-            style={{
-              border: "5px ridge #ff00ff",
-              boxShadow: "5px 5px 0px #000",
-            }}
             loadingSpeed={100}
             interlace={true}
             pixelated={false}
